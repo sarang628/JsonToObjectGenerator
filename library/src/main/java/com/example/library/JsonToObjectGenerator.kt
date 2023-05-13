@@ -21,4 +21,14 @@ class JsonToObjectGenerator<T> {
         )
         return list
     }
+
+    fun getObjectByFile(context: Context, fileName: String, rawType: Type): T {
+        val inputStream = context.assets.open(fileName)
+        val inputStreamReader = InputStreamReader(inputStream)
+        val bufferReader = BufferedReader(inputStreamReader)
+
+        val gson = Gson();
+        val o = gson.fromJson<T>(bufferReader, rawType)
+        return o
+    }
 }
