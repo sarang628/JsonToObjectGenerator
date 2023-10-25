@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.example.library'
+    namespace 'com.sryang.json_to_object_generator'
     compileSdk 33
 
     defaultConfig {
